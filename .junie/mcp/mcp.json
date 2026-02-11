@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "/usr/local/Cellar/php/8.4.5/bin/php",
+            "args": [
+                "/Users/kelvenbragoa/Desktop/PROJECTS/ESKOLARE/eskolare-app/artisan",
+                "boost:mcp"
+            ]
+        }
+    }
+}

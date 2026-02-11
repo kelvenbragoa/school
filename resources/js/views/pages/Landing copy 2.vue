@@ -1,170 +1,166 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { useTranslation } from '@/composables/useTranslation';
-import LanguageSelector from '@/components/LanguageSelector.vue';
+import { ref } from 'vue';
 
-const { t } = useTranslation();
-
-// Key features for hero section - now translated
-const keyFeatures = computed(() => [
-    { icon: 'pi-users', text: t('landing.hero.features.small_groups') },
-    { icon: 'pi-user', text: t('landing.hero.features.personalized') },
-    { icon: 'pi-sun', text: t('landing.hero.features.nature_curriculum') }
-]);
+// Key features for hero section
+const keyFeatures = [
+    { icon: 'pi-users', text: 'Pequenos grupos (máx. 8-10 alunos)' },
+    { icon: 'pi-user', text: 'Aprendizagem personalizada' },
+    { icon: 'pi-sun', text: 'Currículo integrado à natureza' }
+];
 
 // Advantages data
-const advantages = computed(() => [
+const advantages = [
     {
         icon: 'pi-lightbulb',
-        title: t('landing.advantages.project_based.title'),
-        description: t('landing.advantages.project_based.description'),
+        title: 'Aprendizagem Baseada em Projetos',
+        description: 'Utilizando elementos costeiros para exploração científica e criatividade.',
         iconColor: 'text-cyan-600',
         bgColor: 'bg-cyan-50'
     },
     {
         icon: 'pi-calendar',
-        title: t('landing.advantages.flexible_curriculum.title'),
-        description: t('landing.advantages.flexible_curriculum.description'),
+        title: 'Flexibilidade Curricular',
+        description: 'Adaptado ao estilo de vida praiano, respeitando marés e condições climáticas.',
         iconColor: 'text-blue-600',
         bgColor: 'bg-blue-50'
     },
     {
         icon: 'pi-users',
-        title: t('landing.advantages.small_classes.title'),
-        description: t('landing.advantages.small_classes.description'),
+        title: 'Turmas Reduzidas',
+        description: 'Máximo de 8-10 estudantes por tutor para atenção individualizada.',
         iconColor: 'text-teal-600',
         bgColor: 'bg-teal-50'
     },
     {
         icon: 'pi-globe',
-        title: t('landing.advantages.marine_sciences.title'),
-        description: t('landing.advantages.marine_sciences.description'),
+        title: 'Ciências Marinhas',
+        description: 'Integração de ecossistemas costeiros no currículo educacional.',
         iconColor: 'text-emerald-600',
         bgColor: 'bg-emerald-50'
     },
     {
         icon: 'pi-sun',
-        title: t('landing.advantages.environmental_education.title'),
-        description: t('landing.advantages.environmental_education.description'),
+        title: 'Educação Ambiental',
+        description: 'Consciência ecológica como componente transversal do aprendizado.',
         iconColor: 'text-amber-600',
         bgColor: 'bg-amber-50'
     },
     {
         icon: 'pi-building',
-        title: t('landing.advantages.hybrid_structure.title'),
-        description: t('landing.advantages.hybrid_structure.description'),
+        title: 'Estrutura Híbrida',
+        description: 'Espaços físicos confortáveis com atividades ao ar livre regulares.',
         iconColor: 'text-sky-600',
         bgColor: 'bg-sky-50'
     }
-]);
+];
 
 // Learning spaces
-const learningSpaces = computed(() => [
+const learningSpaces = [
     {
         icon: 'pi-home',
-        title: t('landing.learning_spaces.large_rooms.title'),
-        description: t('landing.learning_spaces.large_rooms.description'),
+        title: 'Salas Amplas',
+        description: 'Ambientes climatizados com vista para o oceano e equipamentos modernos.',
         iconColor: 'text-blue-700'
     },
     {
         icon: 'pi-sun',
-        title: t('landing.learning_spaces.natural_laboratory.title'),
-        description: t('landing.learning_spaces.natural_laboratory.description'),
+        title: 'Laboratório Natural',
+        description: 'A praia como extensão da sala de aula para aprendizagem prática.',
         iconColor: 'text-orange-600'
     },
     {
         icon: 'pi-list',
-        title: t('landing.learning_spaces.marine_garden.title'),
-        description: t('landing.learning_spaces.marine_garden.description'),
+        title: 'Horta Marinha',
+        description: 'Jardim sustentável e compostagem para educação ambiental prática.',
         iconColor: 'text-green-600'
     },
     {
         icon: 'pi-book',
-        title: t('landing.learning_spaces.oceanic_library.title'),
-        description: t('landing.learning_spaces.oceanic_library.description'),
+        title: 'Biblioteca Oceânica',
+        description: 'Acervo temático com foco em ciências marinhas e sustentabilidade.',
         iconColor: 'text-cyan-600'
     }
-]);
+];
 
 // Educational programs
-const educationalPrograms = computed(() => [
+const educationalPrograms = [
     {
-        level: t('landing.program.early_childhood.level'),
-        age: t('landing.program.early_childhood.age'),
-        description: t('landing.program.early_childhood.description'),
+        level: 'Educação Infantil',
+        age: '3-5 anos',
+        description: 'Descoberta sensorial na natureza e primeiros contatos com o ambiente marinho através de brincadeiras e exploração.',
         color: 'bg-blue-600'
     },
     {
-        level: t('landing.program.elementary_i.level'),
-        age: t('landing.program.elementary_i.age'),
-        description: t('landing.program.elementary_i.description'),
+        level: 'Fundamental I',
+        age: '6-10 anos',
+        description: 'Alfabetização e matemática contextualizadas, projetos com ecossistemas costeiros e iniciação científica.',
         color: 'bg-cyan-600'
     },
     {
-        level: t('landing.program.elementary_ii.level'),
-        age: t('landing.program.elementary_ii.age'),
-        description: t('landing.program.elementary_ii.description'),
+        level: 'Fundamental II',
+        age: '11-14 anos',
+        description: 'Investigação científica avançada, projetos de impacto ambiental local e desenvolvimento de pensamento crítico.',
         color: 'bg-teal-600'
     },
     {
-        level: t('landing.program.high_school.level'),
-        age: t('landing.program.high_school.age'),
-        description: t('landing.program.high_school.description'),
+        level: 'Ensino Médio',
+        age: '15-17 anos',
+        description: 'Preparação para ENEM/vestibular com foco em sustentabilidade, projetos de vida integrados ao contexto local.',
         color: 'bg-emerald-600'
     }
-]);
+];
 
 // Enrollment steps
-const enrollmentSteps = computed(() => [
+const enrollmentSteps = [
     {
         number: 1,
-        title: t('landing.enrollment.step_1_title'),
-        description: t('landing.enrollment.step_1_description')
+        title: 'Contato Inicial',
+        description: 'Entre em contato conosco para conhecer nossa metodologia. Agendaremos uma conversa para entender as necessidades da sua família.'
     },
     {
         number: 2,
-        title: t('landing.enrollment.step_2_title'),
-        description: t('landing.enrollment.step_2_description')
+        title: 'Visita Personalizada',
+        description: 'Conheça nossos espaços e a equipe. Participe de uma manhã de vivência para entender nosso dia a dia educacional.'
     },
     {
         number: 3,
-        title: t('landing.enrollment.step_3_title'),
-        description: t('landing.enrollment.step_3_description')
+        title: 'Avaliação Diagnóstica',
+        description: 'Processo amigável para conhecer seu filho, identificar interesses e necessidades de aprendizagem individuais.'
     },
     {
         number: 4,
-        title: t('landing.enrollment.step_4_title'),
-        description: t('landing.enrollment.step_4_description')
+        title: 'Matrícula',
+        description: 'Finalização do processo e período de adaptação. Bem-vindo à nossa comunidade de aprendizagem!'
     }
-]);
+];
 
 // Special activities
-const specialActivities = computed(() => [
+const specialActivities = [
     {
         icon: 'pi-compass',
-        title: t('landing.special_activities.tide_program.title'),
-        description: t('landing.special_activities.tide_program.description'),
+        title: 'Programa "Maré do Conhecimento"',
+        description: 'Saídas de campo regulares para exploração de ecossistemas costeiros e aprendizagem vivencial.',
         color: 'text-blue-600'
     },
     {
         icon: 'pi-heart',
-        title: t('landing.special_activities.conservation.title'),
-        description: t('landing.special_activities.conservation.description'),
+        title: 'Projetos de Conservação',
+        description: 'Limpeza de praias, monitoramento de tartarugas marinhas e ações de proteção ambiental.',
         color: 'text-green-600'
     },
     {
         icon: 'pi-star',
-        title: t('landing.special_activities.workshops.title'),
-        description: t('landing.special_activities.workshops.description'),
+        title: 'Oficinas Temáticas',
+        description: 'Astronomia na praia, culinária com plantas nativas, fotografia da natureza e arte sustentável.',
         color: 'text-purple-600'
     },
     {
         icon: 'pi-globe',
-        title: t('landing.special_activities.cultural_exchange.title'),
-        description: t('landing.special_activities.cultural_exchange.description'),
+        title: 'Intercâmbio Cultural',
+        description: 'Parcerias com escolas em outras regiões costeiras para troca de experiências e projetos colaborativos.',
         color: 'text-orange-600'
     }
-]);
+];
 
 // Blog posts
 const blogPosts = [
@@ -192,12 +188,12 @@ const blogPosts = [
 ];
 
 // Statistics
-const statistics = computed(() => [
-    { icon: 'pi-users', count: '8-10', label: t('landing.statistics.students_per_tutor') },
-    { icon: 'pi-sun', count: '3x', label: t('landing.statistics.weekly_beach_activities') },
-    { icon: 'pi-shield', count: '100%', label: t('landing.statistics.qualified_educators') },
-    { icon: 'pi-heart', count: '15+', label: t('landing.statistics.environmental_projects') }
-]);
+const statistics = [
+    { icon: 'pi-users', count: '8-10', label: 'Alunos por Tutor' },
+    { icon: 'pi-sun', count: '3x', label: 'Atividades Semanais na Praia' },
+    { icon: 'pi-shield', count: '100%', label: 'Educadores Qualificados' },
+    { icon: 'pi-heart', count: '15+', label: 'Projetos Ambientais/Ano' }
+];
 
 // Team members
 const teamMembers = [
@@ -232,20 +228,17 @@ const teamMembers = [
                         <div class="flex items-center gap-4">
                             <i class="pi pi-map-marker text-xl"></i>
                             <div class="text-sm">
-                                <div class="font-semibold text-amber-400">{{ t('landing.header.find_us') }}</div>
-                                <div>{{ t('landing.header.location') }}</div>
+                                <div class="font-semibold text-amber-400">ENCONTRE-NOS:</div>
+                                <div>Maputo, Mozambique</div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex items-center gap-6">
-                        <div class="flex items-center gap-4">
-                            <i class="pi pi-clock text-xl"></i>
-                            <div class="text-sm">
-                                <div class="font-semibold text-amber-400">{{ t('landing.header.hours') }}</div>
-                                <div>{{ t('landing.header.hours_description') }}</div>
-                            </div>
+                    <div class="flex items-center gap-4">
+                        <i class="pi pi-clock text-xl"></i>
+                        <div class="text-sm">
+                            <div class="font-semibold text-amber-400">HORÁRIO:</div>
+                            <div>Segunda a Sexta: 08:00 - 16:00</div>
                         </div>
-                        <LanguageSelector />
                     </div>
                 </div>
             </div>
@@ -257,17 +250,17 @@ const teamMembers = [
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-2">
                         <div>
-                            <span><img src="/logo1.png" alt="" srcset="" width="100"></span>
+                            <h1 class="text-3xl font-bold text-blue-900">School<span class="text-cyan-600"></span></h1>
                         </div>
                     </div>
                     <ul class="flex items-center gap-8 list-none">
-                        <li><a href="#home" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">{{ t('landing.nav.home') }}</a></li>
-                        <li><a href="#sobre" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">{{ t('landing.nav.about') }}</a></li>
-                        <li><a href="#metodologia" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">{{ t('landing.nav.methodology') }}</a></li>
-                        <li><a href="#programa" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">{{ t('landing.nav.program') }}</a></li>
-                        <li><a href="#equipe" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">{{ t('landing.nav.team') }}</a></li>
-                        <li><a href="#blog" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">{{ t('landing.nav.blog') }}</a></li>
-                        <li><a href="#contato" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">{{ t('landing.nav.contact') }}</a></li>
+                        <li><a href="#home" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">Início</a></li>
+                        <li><a href="#sobre" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">Sobre Nós</a></li>
+                        <li><a href="#metodologia" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">Metodologia</a></li>
+                        <li><a href="#programa" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">Programa</a></li>
+                        <li><a href="#equipe" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">Equipe</a></li>
+                        <li><a href="#blog" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">Blog</a></li>
+                        <li><a href="#contato" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">Contato</a></li>
                     </ul>
                     <div class="flex items-center gap-4">
                         <!-- <button class="p-2"><i class="pi pi-search text-gray-700"></i></button> -->
@@ -281,15 +274,15 @@ const teamMembers = [
             <div class="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-cyan-800/60 to-transparent"></div>
             <div class="container mx-auto px-6 h-full flex items-center relative z-10">
                 <div class="text-white max-w-3xl">
-                    <h2 class="text-sm font-semibold mb-3 tracking-wider text-amber-300">{{ t('landing.hero.subtitle') }}</h2>
-                    <h1 class="text-6xl font-bold mb-6 leading-tight text-white" v-html="t('landing.hero.title')"></h1>
-                    <p class="text-xl mb-8 text-blue-100">{{ t('landing.hero.description') }}</p>
+                    <h2 class="text-sm font-semibold mb-3 tracking-wider text-amber-300">HOMESCHOOLING COSTEIRO</h2>
+                    <h1 class="text-6xl font-bold mb-6 leading-tight text-white">Educação Personalizada<br>Onde o Mar Encontra<br>o Conhecimento</h1>
+                    <p class="text-xl mb-8 text-blue-100">Homeschooling com a natureza como sala de aula e a praia como laboratório</p>
                     <div class="flex gap-4 mb-8">
                         <button class="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl">
-                            {{ t('landing.hero.cta_methodology') }}
+                            Conheça Nossa Metodologia
                         </button>
                         <button class="border-2 border-white bg-white/10 backdrop-blur-sm hover:bg-white hover:text-blue-900 text-white px-8 py-4 rounded-full font-semibold transition-all">
-                            {{ t('landing.hero.cta_visit') }}
+                            Agende uma Visita
                         </button>
                     </div>
                     <!-- Key Features Icons -->
@@ -310,12 +303,12 @@ const teamMembers = [
                     <div class="flex items-center gap-6">
                         
                         <div>
-                            <h3 class="text-2xl font-bold mb-2 text-white">{{ t('landing.cta.discover_school') }}</h3>
-                            <p class="text-blue-100">{{ t('landing.cta.discover_description') }}</p>
+                            <h3 class="text-2xl font-bold mb-2 text-white">DESCUBRA NOSSA ESCOLA</h3>
+                            <p class="text-blue-100">Educação holística, respeito ao ritmo individual, conexão com a natureza</p>
                         </div>
                     </div>
                     <button class="border-2 border-white text-black px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-900 transition-all shadow-lg">
-                        {{ t('landing.cta.learn_more') }}
+                        SAIBA MAIS
                     </button>
                 </div>
             </div>
@@ -340,48 +333,48 @@ const teamMembers = [
         <section id="sobre" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-blue-900 mb-4">{{ t('landing.about.title') }}</h2>
-                    <p class="text-gray-600">{{ t('landing.about.subtitle') }}</p>
+                    <h2 class="text-4xl font-bold text-blue-900 mb-4">SOBRE NÓS</h2>
+                    <p class="text-gray-600">Uma nova forma de aprender, conectada à natureza</p>
                     <div class="w-16 h-1 bg-cyan-600 mx-auto mt-4"></div>
                 </div>
                 <div class="grid grid-cols-2 gap-12 mb-12">
                     <div>
-                        <h3 class="text-3xl font-bold text-blue-900 mb-4">{{ t('landing.about.our_story_title') }}</h3>
-                        <h4 class="text-xl text-cyan-600 mb-6">{{ t('landing.about.our_story_subtitle') }}</h4>
+                        <h3 class="text-3xl font-bold text-blue-900 mb-4">NOSSA HISTÓRIA</h3>
+                        <h4 class="text-xl text-cyan-600 mb-6">EDUCAÇÃO QUE RESPEITA A NATUREZA E O INDIVÍDUO</h4>
                         <p class="text-gray-600 mb-6 leading-relaxed">
-                            {{ t('landing.about.story_p1') }}
+                            A School nasceu do sonho de unir educação de qualidade com o ambiente privilegiado do litoral. Fundada por educadores apaixonados pela natureza, nossa escola oferece uma proposta única de homeschooling que utiliza o ecossistema costeiro como parte integrante do currículo educacional.
                         </p>
                         <p class="text-gray-600 mb-8 leading-relaxed">
-                            {{ t('landing.about.story_p2') }}
+                            Acreditamos que cada criança aprende em seu próprio ritmo e que o contato com a natureza potencializa o desenvolvimento integral. Nossa metodologia combina rigor acadêmico com liberdade de exploração, preparando cidadãos conscientes e conectados com o meio ambiente.
                         </p>
                         
-                        <h4 class="text-lg font-bold text-blue-900 mb-4 mt-8">{{ t('landing.about.mission_vision_values') }}</h4>
+                        <h4 class="text-lg font-bold text-blue-900 mb-4 mt-8">MISSÃO, VISÃO E VALORES</h4>
                         <ul class="space-y-3 mb-8">
                             <li class="flex items-start gap-3">
                                 <i class="pi pi-check-circle text-cyan-600 mt-1" style="font-size: 1.5rem;"></i>
                                 <div>
                                     <span class="font-semibold text-gray-800">Missão:</span>
-                                    <span class="text-gray-700"> {{ t('landing.about.mission') }}</span>
+                                    <span class="text-gray-700"> Proporcionar educação holística que respeita o ritmo individual de cada estudante</span>
                                 </div>
                             </li>
                             <li class="flex items-start gap-3">
                                 <i class="pi pi-check-circle text-cyan-600 mt-1" style="font-size: 1.5rem;"></i>
                                 <div>
                                     <span class="font-semibold text-gray-800">Visão:</span>
-                                    <span class="text-gray-700"> {{ t('landing.about.vision') }}</span>
+                                    <span class="text-gray-700"> Ser referência em educação integrada à natureza no Brasil</span>
                                 </div>
                             </li>
                             <li class="flex items-start gap-3">
                                 <i class="pi pi-check-circle text-cyan-600 mt-1" style="font-size: 1.5rem;"></i>
                                 <div>
                                     <span class="font-semibold text-gray-800">Valores:</span>
-                                    <span class="text-gray-700"> {{ t('landing.about.values') }}</span>
+                                    <span class="text-gray-700"> Respeito, sustentabilidade, autonomia, criatividade e conexão</span>
                                 </div>
                             </li>
                         </ul>
                         
                         <button class="border-2 border-cyan-600 text-cyan-600 px-8 py-3 rounded-full font-semibold hover:bg-cyan-600 hover:text-white transition-all shadow-md">
-                            {{ t('landing.about.cta_learn_more') }}
+                            CONHEÇA MAIS
                         </button>
                     </div>
                     <div class="grid grid-cols-2 gap-6">
@@ -399,8 +392,8 @@ const teamMembers = [
         <section id="metodologia" class="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-blue-900 mb-4">{{ t('landing.methodology.title') }}</h2>
-                    <p class="text-gray-600">{{ t('landing.methodology.subtitle') }}</p>
+                    <h2 class="text-4xl font-bold text-blue-900 mb-4">NOSSA METODOLOGIA</h2>
+                    <p class="text-gray-600">Educação personalizada com a natureza como aliada</p>
                     <div class="w-16 h-1 bg-cyan-600 mx-auto mt-4"></div>
                 </div>
                 
@@ -410,44 +403,44 @@ const teamMembers = [
                             <div class="bg-cyan-100 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                                 <i class="pi pi-user text-cyan-600 text-3xl" style="font-size: 1.5rem;"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-blue-900 mb-4">{{ t('landing.methodology.personalized.title') }}</h3>
-                            <p class="text-gray-600 leading-relaxed">{{ t('landing.methodology.personalized.description') }}</p>
+                            <h3 class="text-xl font-bold text-blue-900 mb-4">Educação Personalizada</h3>
+                            <p class="text-gray-600 leading-relaxed">Adaptamos o currículo às necessidades, interesses e ritmo de cada estudante, garantindo aprendizagem significativa e desenvolvimento pleno.</p>
                         </div>
                         
                         <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all">
                             <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                                 <i class="pi pi-sun text-green-600 text-3xl" style="font-size: 1.5rem;"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-blue-900 mb-4">{{ t('landing.methodology.nature_learning.title') }}</h3>
-                            <p class="text-gray-600 leading-relaxed">{{ t('landing.methodology.nature_learning.description') }}</p>
+                            <h3 class="text-xl font-bold text-blue-900 mb-4">Aprendizagem na Natureza</h3>
+                            <p class="text-gray-600 leading-relaxed">Ciências marinhas e costeiras integradas ao currículo. A praia, mangues e vegetação costeira são extensões naturais de nossa sala de aula.</p>
                         </div>
                         
                         <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all">
                             <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mb-6">
                                 <i class="pi pi-building text-blue-600 text-3xl" style="font-size: 1.5rem;"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-blue-900 mb-4">{{ t('landing.methodology.hybrid_structure.title') }}</h3>
-                            <p class="text-gray-600 leading-relaxed">{{ t('landing.methodology.hybrid_structure.description') }}</p>
+                            <h3 class="text-xl font-bold text-blue-900 mb-4">Estrutura Híbrida</h3>
+                            <p class="text-gray-600 leading-relaxed">Combinamos aulas em espaços físicos confortáveis com atividades ao ar livre e suporte online quando necessário.</p>
                         </div>
                     </div>
                     
                     <div class="bg-white p-10 rounded-xl shadow-lg">
-                        <h4 class="text-2xl font-bold text-blue-900 mb-6 text-center">{{ t('landing.methodology.continuous_assessment_title') }}</h4>
+                        <h4 class="text-2xl font-bold text-blue-900 mb-6 text-center">Avaliação Contínua e Desenvolvimento Integral</h4>
                         <p class="text-gray-600 text-center mb-8 leading-relaxed max-w-3xl mx-auto">
-                            {{ t('landing.methodology.continuous_assessment_description') }}
+                            Utilizamos portfólios, projetos e observação cuidadosa do desenvolvimento para acompanhar o progresso de cada estudante. Nossa abordagem vai além das notas, valorizando o crescimento acadêmico, emocional e social.
                         </p>
                         <div class="flex justify-center gap-6">
                             <div class="flex items-center gap-2">
                                 <i class="pi pi-check-circle text-cyan-600" style="font-size: 1.5rem;"></i>
-                                <span class="text-gray-700">{{ t('landing.methodology.individual_portfolios') }}</span>
+                                <span class="text-gray-700">Portfólios individuais</span>
                             </div>
                             <div class="flex items-center gap-2">
                                 <i class="pi pi-check-circle text-cyan-600" style="font-size: 1.5rem;"></i>
-                                <span class="text-gray-700">{{ t('landing.methodology.practical_projects') }}</span>
+                                <span class="text-gray-700">Projetos práticos</span>
                             </div>
                             <div class="flex items-center gap-2">
                                 <i class="pi pi-check-circle text-cyan-600" style="font-size: 1.5rem;"></i>
-                                <span class="text-gray-700">{{ t('landing.methodology.socioemotional_development') }}</span>
+                                <span class="text-gray-700">Desenvolvimento socioemocional</span>
                             </div>
                         </div>
                     </div>
@@ -459,8 +452,8 @@ const teamMembers = [
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-blue-900 mb-4">{{ t('landing.learning_spaces.title') }}</h2>
-                    <p class="text-gray-600">{{ t('landing.learning_spaces.subtitle') }}</p>
+                    <h2 class="text-4xl font-bold text-blue-900 mb-4">ESPAÇOS DE APRENDIZAGEM</h2>
+                    <p class="text-gray-600">Ambientes pensados para inspirar e conectar</p>
                     <div class="w-16 h-1 bg-cyan-600 mx-auto mt-4"></div>
                 </div>
                 
@@ -478,8 +471,8 @@ const teamMembers = [
         <section id="programa" class="py-20 bg-gradient-to-br from-cyan-50 via-blue-50 to-cyan-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-blue-900 mb-4">{{ t('landing.program.title') }}</h2>
-                    <p class="text-gray-600">{{ t('landing.program.subtitle') }}</p>
+                    <h2 class="text-4xl font-bold text-blue-900 mb-4">PROGRAMA EDUCACIONAL</h2>
+                    <p class="text-gray-600">Do infantil ao ensino médio, sempre conectados à natureza</p>
                     <div class="w-16 h-1 bg-cyan-600 mx-auto mt-4"></div>
                 </div>
                 
@@ -496,34 +489,34 @@ const teamMembers = [
                 </div>
                 
                 <div class="bg-white rounded-xl p-10 shadow-lg max-w-4xl mx-auto">
-                    <h4 class="text-2xl font-bold text-blue-900 mb-6 text-center">{{ t('landing.program.specific_components') }}</h4>
+                    <h4 class="text-2xl font-bold text-blue-900 mb-6 text-center">Componentes Específicos</h4>
                     <div class="grid grid-cols-2 gap-6">
                         <div class="flex items-start gap-3">
                             <i class="pi pi-check-circle text-cyan-600 text-xl mt-1" style="font-size: 1.5rem;"></i>
                             <div>
-                                <h5 class="font-bold text-blue-900 mb-1">{{ t('landing.program.marine_sciences.title') }}</h5>
-                                <p class="text-sm text-gray-600">{{ t('landing.program.marine_sciences.description') }}</p>
+                                <h5 class="font-bold text-blue-900 mb-1">Ciências Marinhas</h5>
+                                <p class="text-sm text-gray-600">Estudo dos ecossistemas costeiros e oceânicos</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <i class="pi pi-check-circle text-cyan-600 text-xl mt-1" style="font-size: 1.5rem;"></i>
                             <div>
-                                <h5 class="font-bold text-blue-900 mb-1">{{ t('landing.program.coastal_sustainability.title') }}</h5>
-                                <p class="text-sm text-gray-600">{{ t('landing.program.coastal_sustainability.description') }}</p>
+                                <h5 class="font-bold text-blue-900 mb-1">Sustentabilidade Costeira</h5>
+                                <p class="text-sm text-gray-600">Consciência ambiental e preservação</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <i class="pi pi-check-circle text-cyan-600 text-xl mt-1" style="font-size: 1.5rem;"></i>
                             <div>
-                                <h5 class="font-bold text-blue-900 mb-1">{{ t('landing.program.physical_education.title') }}</h5>
-                                <p class="text-sm text-gray-600">{{ t('landing.program.physical_education.description') }}</p>
+                                <h5 class="font-bold text-blue-900 mb-1">Educação Física na Natureza</h5>
+                                <p class="text-sm text-gray-600">Surf, stand-up paddle, natação oceânica</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <i class="pi pi-check-circle text-cyan-600 text-xl mt-1" style="font-size: 1.5rem;"></i>
                             <div>
-                                <h5 class="font-bold text-blue-900 mb-1">{{ t('landing.program.natural_arts.title') }}</h5>
-                                <p class="text-sm text-gray-600">{{ t('landing.program.natural_arts.description') }}</p>
+                                <h5 class="font-bold text-blue-900 mb-1">Artes com Elementos Naturais</h5>
+                                <p class="text-sm text-gray-600">Expressão artística sustentável</p>
                             </div>
                         </div>
                     </div>
@@ -545,12 +538,12 @@ const teamMembers = [
                     <div class="flex items-center gap-6">
                         
                         <div>
-                            <h3 class="text-2xl font-bold mb-2 text-white">{{ t('landing.cta.school_life') }}</h3>
-                            <p class="text-blue-100">{{ t('landing.cta.school_life_description') }}</p>
+                            <h3 class="text-2xl font-bold mb-2 text-white">VIDA NA ESCOLA</h3>
+                            <p class="text-blue-100">Descubra as atividades diárias e experiências de aprendizagem</p>
                         </div>
                     </div>
                     <button class="border-2 border-white text-black px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-900 transition-all shadow-lg">
-                        {{ t('landing.cta.view_gallery') }}
+                        VER GALERIA
                     </button>
                 </div>
             </div>
@@ -620,8 +613,8 @@ const teamMembers = [
         <section id="equipe" class="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-blue-900 mb-4">{{ t('landing.team.title') }}</h2>
-                    <p class="text-gray-600">{{ t('landing.team.subtitle') }}</p>
+                    <h2 class="text-4xl font-bold text-blue-900 mb-4">NOSSA EQUIPE</h2>
+                    <p class="text-gray-600">Educadores apaixonados pela natureza e pelo desenvolvimento humano</p>
                     <div class="w-16 h-1 bg-cyan-600 mx-auto mt-4"></div>
                 </div>
                 
@@ -637,9 +630,9 @@ const teamMembers = [
                 </div>
                 
                 <div class="bg-white rounded-xl p-8 max-w-3xl mx-auto shadow-md">
-                    <h4 class="text-xl font-bold text-blue-900 mb-4 text-center">{{ t('landing.team.multidisciplinary_title') }}</h4>
+                    <h4 class="text-xl font-bold text-blue-900 mb-4 text-center">Equipe Multidisciplinar</h4>
                     <p class="text-gray-600 text-center leading-relaxed">
-                        {{ t('landing.team.multidisciplinary_description') }}
+                        Nossa equipe reúne pedagogos, biólogos marinhos, educadores físicos, psicólogos e especialistas em educação ambiental. Todos compartilham a filosofia de educação holística, conectada à natureza e respeitosa ao desenvolvimento individual.
                     </p>
                 </div>
             </div>
@@ -649,8 +642,8 @@ const teamMembers = [
         <section class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-blue-900 mb-4">{{ t('landing.special_activities.title') }}</h2>
-                    <p class="text-gray-600">{{ t('landing.special_activities.subtitle') }}</p>
+                    <h2 class="text-4xl font-bold text-blue-900 mb-4">ATIVIDADES ESPECIAIS</h2>
+                    <p class="text-gray-600">Projetos que conectam aprendizado, natureza e comunidade</p>
                     <div class="w-16 h-1 bg-cyan-600 mx-auto mt-4"></div>
                 </div>
                 
@@ -668,8 +661,8 @@ const teamMembers = [
         <section class="py-20 bg-gradient-to-br from-cyan-50 to-blue-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-blue-900 mb-4">{{ t('landing.enrollment.title') }}</h2>
-                    <p class="text-gray-600">{{ t('landing.enrollment.subtitle') }}</p>
+                    <h2 class="text-4xl font-bold text-blue-900 mb-4">PROCESSO DE ADMISSÃO</h2>
+                    <p class="text-gray-600">Quatro passos para fazer parte da nossa comunidade</p>
                     <div class="w-16 h-1 bg-cyan-600 mx-auto mt-4"></div>
                 </div>
                 <div class="grid grid-cols-4 gap-8 max-w-6xl mx-auto">
@@ -685,19 +678,19 @@ const teamMembers = [
                 
                 <div class="mt-16 text-center">
                     <div class="bg-white rounded-xl p-8 max-w-3xl mx-auto shadow-lg">
-                        <h4 class="text-xl font-bold text-blue-900 mb-4">{{ t('landing.enrollment.faq_title') }}</h4>
+                        <h4 class="text-xl font-bold text-blue-900 mb-4">FAQ sobre Homeschooling</h4>
                         <div class="text-left space-y-4">
                             <div>
-                                <h5 class="font-semibold text-blue-900 mb-2">{{ t('landing.enrollment.faq_legal_question') }}</h5>
-                                <p class="text-sm text-gray-600">{{ t('landing.enrollment.faq_legal_answer') }}</p>
+                                <h5 class="font-semibold text-blue-900 mb-2">É legal em Moçambique?</h5>
+                                <p class="text-sm text-gray-600">Atuamos dentro da legislação vigente, oferecendo suporte completo para adequação às exigências legais.</p>
                             </div>
                             <div>
-                                <h5 class="font-semibold text-blue-900 mb-2">{{ t('landing.enrollment.faq_certification_question') }}</h5>
-                                <p class="text-sm text-gray-600">{{ t('landing.enrollment.faq_certification_answer') }}</p>
+                                <h5 class="font-semibold text-blue-900 mb-2">Meu filho terá certificação?</h5>
+                                <p class="text-sm text-gray-600">Sim! Oferecemos todo o suporte para validação e certificação educacional.</p>
                             </div>
                             <div>
-                                <h5 class="font-semibold text-blue-900 mb-2">{{ t('landing.enrollment.faq_adaptation_question') }}</h5>
-                                <p class="text-sm text-gray-600">{{ t('landing.enrollment.faq_adaptation_answer') }}</p>
+                                <h5 class="font-semibold text-blue-900 mb-2">Como funciona o período de adaptação?</h5>
+                                <p class="text-sm text-gray-600">Oferecemos um período gradual de 2 semanas para a criança conhecer os espaços, tutores e colegas.</p>
                             </div>
                         </div>
                     </div>
@@ -711,12 +704,12 @@ const teamMembers = [
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-6">
                         <div>
-                            <h3 class="text-2xl font-bold mb-2 text-white">{{ t('landing.cta.start_journey') }}</h3>
-                            <p class="text-blue-100">{{ t('landing.cta.start_journey_description') }}</p>
+                            <h3 class="text-2xl font-bold mb-2 text-white">INICIE SUA JORNADA</h3>
+                            <p class="text-blue-100">Proporcione ao seu filho uma educação conectada com a natureza</p>
                         </div>
                     </div>
                     <button class="border-2 border-white text-black px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-900 transition-all shadow-lg">
-                        {{ t('landing.cta.schedule_visit') }}
+                        AGENDAR VISITA
                     </button>
                 </div>
             </div>
@@ -726,8 +719,8 @@ const teamMembers = [
         <section id="blog" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-blue-900 mb-4">{{ t('landing.blog.title') }}</h2>
-                    <p class="text-gray-600">{{ t('landing.blog.subtitle') }}</p>
+                    <h2 class="text-4xl font-bold text-blue-900 mb-4">BLOG & NOVIDADES</h2>
+                    <p class="text-gray-600">Acompanhe as últimas notícias e insights sobre educação na natureza</p>
                     <div class="w-16 h-1 bg-cyan-600 mx-auto mt-4"></div>
                 </div>
                 <div class="grid grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -745,7 +738,7 @@ const teamMembers = [
                 </div>
                 <div class="text-center mt-12">
                     <button class="border-2 border-cyan-600 text-cyan-600 px-8 py-3 rounded-full font-semibold hover:bg-cyan-600 hover:text-white transition-all shadow-md">
-                        {{ t('landing.blog.view_all') }}
+                        VER TODOS OS ARTIGOS
                     </button>
                 </div>
             </div>
@@ -758,18 +751,18 @@ const teamMembers = [
                     <div class="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center shadow-lg">
                         <i class="pi pi-envelope text-white text-3xl"></i>
                     </div>
-                    <h2 class="text-3xl font-bold text-blue-900 mb-3">{{ t('landing.newsletter.title') }}</h2>
+                    <h2 class="text-3xl font-bold text-blue-900 mb-3">Receba Nossas Novidades</h2>
                     <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
-                        {{ t('landing.newsletter.description') }}
+                        Inscreva-se em nossa newsletter e receba conteúdos sobre educação na natureza, dicas de atividades e atualizações da escola
                     </p>
                     <div class="flex gap-4 max-w-md mx-auto">
                         <input 
                             type="email" 
-                            :placeholder="t('landing.newsletter.placeholder')" 
+                            placeholder="Seu melhor e-mail" 
                             class="flex-1 px-6 py-3 rounded-full border-2 border-cyan-300 focus:outline-none focus:border-cyan-600 transition-colors"
                         />
                         <button class="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all shadow-md hover:shadow-lg">
-                            {{ t('landing.newsletter.subscribe') }}
+                            INSCREVER
                         </button>
                     </div>
                 </div>
@@ -784,23 +777,23 @@ const teamMembers = [
                         <div class="bg-white/10 backdrop-blur-sm rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                             <i class="pi pi-phone text-2xl"></i>
                         </div>
-                        <h4 class="font-bold mb-2 text-amber-300">{{ t('landing.contact.phone') }}</h4>
+                        <h4 class="font-bold mb-2 text-amber-300">TELEFONE</h4>
                         <p class="text-blue-100">+258 84 123 4567</p>
-                        <p class="text-sm text-blue-200">{{ t('landing.contact.phone_available') }}</p>
+                        <p class="text-sm text-blue-200">Segunda a Sexta, 8h-17h</p>
                     </div>
                     <div class="text-center">
                         <div class="bg-white/10 backdrop-blur-sm rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                             <i class="pi pi-envelope text-2xl"></i>
                         </div>
-                        <h4 class="font-bold mb-2 text-amber-300">{{ t('landing.contact.email') }}</h4>
+                        <h4 class="font-bold mb-2 text-amber-300">E-MAIL</h4>
                         <p class="text-blue-100">info@school.co.mz</p>
-                        <p class="text-sm text-blue-200">{{ t('landing.contact.email_response') }}</p>
+                        <p class="text-sm text-blue-200">Respondemos em 24h</p>
                     </div>
                     <div class="text-center">
                         <div class="bg-white/10 backdrop-blur-sm rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                             <i class="pi pi-map-marker text-2xl"></i>
                         </div>
-                        <h4 class="font-bold mb-2 text-amber-300">{{ t('landing.contact.location') }}</h4>
+                        <h4 class="font-bold mb-2 text-amber-300">LOCALIZAÇÃO</h4>
                         <p class="text-blue-100">Distrito de Matutuine</p>
                         <p class="text-sm text-blue-200">Maputo, Moçambique</p>
                     </div>
@@ -814,20 +807,22 @@ const teamMembers = [
                 <div class="grid grid-cols-3 gap-12 mb-12">
                     <!-- About Us -->
                     <div>
-                        <h3 class="text-xl font-bold mb-6 pb-3 border-b-2 border-cyan-500 inline-block text-white">{{ t('landing.footer.about_title') }}</h3>
+                        <h3 class="text-xl font-bold mb-6 pb-3 border-b-2 border-cyan-500 inline-block text-white">SOBRE SCHOOL</h3>
                         <p class="text-blue-200 mb-6 leading-relaxed">
-                            {{ t('landing.footer.about_description') }}
+                            Escola pioneira em homeschooling costeiro em Moçambique. Oferecemos educação personalizada e holística, utilizando o ambiente marinho como laboratório de aprendizagem. Nossa metodologia respeita o ritmo individual de cada estudante enquanto promove conexão profunda com a natureza e consciência ambiental.
                         </p>
                         <div class="flex items-center gap-2 mb-4">
+                            <i class="pi pi-sun text-3xl text-cyan-400"></i>
                             <div>
-                                <img src="/logo1.png" alt="" srcset="" width="100" style="filter: brightness(0) invert(1)">
+                                <h2 class="text-2xl font-bold">School<span class="text-cyan-400">.</span></h2>
+                                <span class="text-xs text-blue-300">Homeschool na praia</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Recent Posts -->
                     <div>
-                        <h3 class="text-xl font-bold mb-6 pb-3 border-b-2 border-cyan-500 inline-block text-white">{{ t('landing.footer.recent_posts') }}</h3>
+                        <h3 class="text-xl font-bold mb-6 pb-3 border-b-2 border-cyan-500 inline-block text-white">ARTIGOS RECENTES</h3>
                         <div class="space-y-4">
                             <div v-for="post in blogPosts" :key="post.title" class="flex gap-4">
                                 <div class="w-16 h-16 bg-cover bg-center rounded flex-shrink-0" :style="`background-image: url('${post.image}')`"></div>
@@ -844,9 +839,9 @@ const teamMembers = [
 
                     <!-- Why Choose Us -->
                     <div>
-                        <h3 class="text-xl font-bold mb-6 pb-3 border-b-2 border-cyan-500 inline-block text-white">{{ t('landing.footer.why_choose_us_title') }}</h3>
+                        <h3 class="text-xl font-bold mb-6 pb-3 border-b-2 border-cyan-500 inline-block text-white">POR QUE SCHOOL</h3>
                         <p class="text-blue-200 mb-6 leading-relaxed">
-                            {{ t('landing.footer.why_choose_us_description') }}
+                            Educação que une rigor acadêmico com liberdade de exploração em ambiente natural privilegiado.
                         </p>
                         <ul class="space-y-3">
                             <li class="flex items-start gap-3">
@@ -885,10 +880,10 @@ const teamMembers = [
                 <div class="border-t border-blue-800 pt-8">
                     <!-- Links -->
                     <div class="flex justify-center gap-8 mb-6 text-sm">
-                        <a href="#" class="text-blue-200 hover:text-cyan-400 transition-colors">{{ t('landing.footer.privacy_policy') }}</a>
-                        <a href="#" class="text-blue-200 hover:text-cyan-400 transition-colors">{{ t('landing.footer.terms_of_use') }}</a>
-                        <a href="#" class="text-blue-200 hover:text-cyan-400 transition-colors">{{ t('landing.footer.faq') }}</a>
-                        <a href="#" class="text-blue-200 hover:text-cyan-400 transition-colors">{{ t('landing.footer.legislation') }}</a>
+                        <a href="#" class="text-blue-200 hover:text-cyan-400 transition-colors">Política de Privacidade</a>
+                        <a href="#" class="text-blue-200 hover:text-cyan-400 transition-colors">Termos de Uso</a>
+                        <a href="#" class="text-blue-200 hover:text-cyan-400 transition-colors">FAQ</a>
+                        <a href="#" class="text-blue-200 hover:text-cyan-400 transition-colors">Legislação Homeschooling</a>
                     </div>
                     
                     <!-- Social Media -->
@@ -909,7 +904,7 @@ const teamMembers = [
                     
                     <!-- Copyright -->
                     <div class="text-center text-blue-300 text-sm">
-                        <p class="mb-2">{{ t('landing.footer.copyright') }}</p>
+                        <p class="mb-2">© 2026 School - Homeschool na Praia | Educação Conectada com a Natureza</p>
                     </div>
                 </div>
             </div>

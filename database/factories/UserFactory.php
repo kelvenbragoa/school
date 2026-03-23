@@ -29,6 +29,9 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
+            'role' => 'solicitante',
+            'department' => fake()->randomElement(['Produção', 'Manutenção', 'Qualidade', 'Logística', 'Administração']),
+            'is_active' => true,
         ];
     }
 
@@ -39,6 +42,36 @@ class UserFactory extends Factory
     {
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
+        ]);
+    }
+
+    /**
+     * Indicate that the user is an admin.
+     */
+    public function admin(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'role' => 'admin',
+        ]);
+    }
+
+    /**
+     * Indicate that the user is a gestor.
+     */
+    public function gestor(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'role' => 'gestor',
+        ]);
+    }
+
+    /**
+     * Indicate that the user is armazem.
+     */
+    public function armazem(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'role' => 'armazem',
         ]);
     }
 }

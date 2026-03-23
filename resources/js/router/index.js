@@ -103,6 +103,78 @@ const router = createRouter({
                     path: '/documentation',
                     name: 'documentation',
                     component: () => import('@/views/pages/Documentation.vue')
+                },
+                // Stock System Routes
+                {
+                    path: '/admin/stock/dashboard',
+                    name: 'stock.dashboard',
+                    component: () => import('@/views/pages/stock/dashboard/Index.vue')
+                },
+                {
+                    path: '/admin/stock/workflow',
+                    name: 'stock.workflow',
+                    component: () => import('@/views/pages/stock/workflow/Index.vue')
+                },
+                {
+                    path: '/admin/stock/items',
+                    name: 'stock.items.index',
+                    component: () => import('@/views/pages/stock/items/Index.vue')
+                },
+                {
+                    path: '/admin/stock/items/create',
+                    name: 'stock.items.create',
+                    component: () => import('@/views/pages/stock/items/Create.vue')
+                },
+                {
+                    path: '/admin/stock/items/:id',
+                    name: 'stock.items.show',
+                    component: () => import('@/views/pages/stock/items/Show.vue')
+                },
+                {
+                    path: '/admin/stock/items/:id/edit',
+                    name: 'stock.items.edit',
+                    component: () => import('@/views/pages/stock/items/Edit.vue')
+                },
+                {
+                    path: '/admin/stock/requests',
+                    name: 'stock.requests.index',
+                    component: () => import('@/views/pages/stock/requests/Index.vue')
+                },
+                {
+                    path: '/admin/stock/requests/create',
+                    name: 'stock.requests.create',
+                    component: () => import('@/views/pages/stock/requests/Create.vue')
+                },
+                {
+                    path: '/admin/stock/requests/:id',
+                    name: 'stock.requests.show',
+                    component: () => import('@/views/pages/stock/requests/Show.vue')
+                },
+                {
+                    path: '/admin/stock/requests/:id/edit',
+                    name: 'stock.requests.edit',
+                    component: () => import('@/views/pages/stock/requests/Create.vue')
+                },
+                // Users Routes
+                {
+                    path: '/admin/users',
+                    name: 'users.index',
+                    component: () => import('@/views/pages/users/Index.vue')
+                },
+                {
+                    path: '/admin/users/create',
+                    name: 'users.create',
+                    component: () => import('@/views/pages/users/Create.vue')
+                },
+                {
+                    path: '/admin/users/:id',
+                    name: 'users.show',
+                    component: () => import('@/views/pages/users/Show.vue')
+                },
+                {
+                    path: '/admin/users/:id/edit',
+                    name: 'users.edit',
+                    component: () => import('@/views/pages/users/Edit.vue')
                 }
             ]
         },

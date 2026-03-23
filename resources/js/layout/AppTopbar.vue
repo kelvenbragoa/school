@@ -1,8 +1,25 @@
 <script setup>
 import { useLayout } from '@/layout/composables/layout';
+import { useAuth } from '@/composables/useAuth';
+import { useRouter } from 'vue-router';
+import { useToast } from 'primevue/usetoast';
 import AppConfigurator from './AppConfigurator.vue';
 
 const { toggleMenu, toggleDarkMode, isDarkTheme } = useLayout();
+const { user, logout } = useAuth();
+const router = useRouter();
+const toast = useToast();
+
+const handleLogout = async () => {
+    await logout();
+    toast.add({
+        severity: 'success',
+        summary: 'Logout',
+        detail: 'Você saiu com sucesso',
+        life: 3000
+    });
+    router.push('/auth/login');
+};
 </script>
 
 <template>
@@ -60,17 +77,14 @@ const { toggleMenu, toggleDarkMode, isDarkTheme } = useLayout();
 
             <div class="layout-topbar-menu hidden lg:block">
                 <div class="layout-topbar-menu-content">
-                    <button type="button" class="layout-topbar-action">
-                        <i class="pi pi-calendar"></i>
-                        <span>Calendar</span>
-                    </button>
-                    <button type="button" class="layout-topbar-action">
-                        <i class="pi pi-inbox"></i>
-                        <span>Messages</span>
-                    </button>
-                    <button type="button" class="layout-topbar-action">
+                    <div v-if="user" class="flex align-items-center gap-2 px-3">
                         <i class="pi pi-user"></i>
-                        <span>Profile</span>
+                        <span class="font-medium">{{ user.name }}</span>
+                        <Tag :value="user.role" severity="info" class="ml-2" />
+                    </div>
+                    <button type="button" class="layout-topbar-action" @click="handleLogout">
+                        <i class="pi pi-sign-out"></i>
+                        <span>Sair</span>
                     </button>
                 </div>
             </div>
